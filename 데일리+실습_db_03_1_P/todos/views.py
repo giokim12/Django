@@ -32,8 +32,29 @@ def create(request):
 
 @require_POST
 def toggle(request, pk):
-  todo = Todo.objects.get(pk = pk)
-  
+  if request.
+    todo = Todo.objects.get(pk = pk)
+    if todo.completed is True:
+      todo.completed = False
+    else:
+      todo.completed = True
+    todo.save()
+    return redirect('todos:index')
+  else:
+    return redirect('accounts:login')
+
+@require_POST
+def delete(request, pk):
+  if request.
+    todo = Todo.objects.get(pk = pk)
+    if todo.completed is True:
+      todo.completed = False
+    else:
+      todo.completed = True
+    todo.save()
+    return redirect('todos:index')
+  else:
+    return redirect('accounts:login') 
 
 
 

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Todos</h1>
+<a href="{% url 'todos:create' %}">[CREATE]</a>
+<hr>
+{% for todo in todos %}
+  <p>글 번호: {{ todo.pk }}</p>
+  <p>글 제목: {{ todo.title }}</p>
+  <form action="{% url 'todos:toggle' todo.pk %}" method="POST">
+    {% csrf_token %}
+    {% if todo.completed == True %}
+      <input type="submit" value= "취소하기">
+    {% else %}
+      <input type="submit" value= "완료하기">
+    {% endif %}
+
+
+  </form>
+
+  {% if todo.author == user %}
+  <form action="{% url 'todos:delete' todo.pk %}" method='POST'>
+    {% csrf_token %}
+    <input type="submit" value="삭제하기">
+  </form>
+  {% endif %}
+  <hr>
+{% endfor %}
+
+{% endblock content %}
+
+
