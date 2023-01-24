@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> CREATE PAGE </h1>
+    <hr>
+    
+    <form action="{% url 'articles:create' %}" method= "POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value= "작성하기">
+    </form>
+
+    <a href="{% url 'articles:index' %}">뒤로가기</a>
+
+{% endblock content %}

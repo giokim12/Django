@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Detail Page</h1>
+  <h3>{{ article.pk }}번째 글</h3>
+  <hr>
+  <p>제목: {{ article.title }}</p>
+  <p>content: {{ article.content }}</p>
+  <p>make date: {{ article.created_at }}</p>
+  <p>modified date:{{ article.updated_at }}</p>
+  <hr>
+  <a href="{% url 'articles:main' %}">[BACK]</a>
+{% endblock content %}
+
+

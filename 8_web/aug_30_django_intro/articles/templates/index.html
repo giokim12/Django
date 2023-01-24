@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>첫 페이지 생성!</h1>
+    <p>이름은: {{ name }}</p>
+    <p>점심메뉴 리스트: {{ lunches }}</p>
+    <p>점심1: {{lunches.0}}</p>
+    <p>넘겨받은 단어는: {{ word }}</p>
+    <p>단어: {{word|upper }}</p>
+    <p>긴단어 자르기: {{longword|truncatewords:10}}</p>
+
+      {% for lunch in lunches %}
+      <p> 리스트 : {{ lunch }} </p>
+      {% endfor %}
+
+      {% if flag == 0 %} 
+      flag는 0입니다 
+      {% elif flag == 1%}
+      flag는 1입니다 
+      {% else %} 
+      flag는 0도 1도 아닙니다 
+      {% endif %} 
+      {#한줄주석#}
+      {%comment%} 
+      이것은 
+      여러줄 
+      주석 
+      {%endcomment%}
+    </p>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 자손 결합자 
+      div p 라고 할 때 div의 자식의 자식인 노드중 p를 선택한다.
+      즉 자손을 선택한다.
+    */
+    div p {
+      color: blue;
+    }
+
+    /* 자식 결합자
+      div p 라고 할 떄 div의 직계 자식인 노드중 p를 선택한다.
+    */
+    div > p{
+      color: crimson;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>
+      자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손자손
+    </p>
+  </div>
+  <div>
+    <span>
+      <p>
+        자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식자식
+      </p>
+    </span>
+  </div>
+</body>
+</html>

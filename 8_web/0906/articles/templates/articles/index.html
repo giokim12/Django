@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> INDEX </h1>
+    <a href="{% url 'articles:create' %}">글 작성하기</a>
+    <hr>
+
+    {% if articles|length <= 0 %}
+        <p> 글을 작성해주세요. </p>
+    
+    {% endif %}
+
+    {% for article in articles %}
+        <a href="{% url 'articles:detail' article.pk %}">글번호: {{ article.pk }}</a>
+        {% comment %} <p> 글번호: {{ article.pk }}</p> {% endcomment %}
+        <p> 제목: {{ article.title }}</p>
+        
+        <hr>
+    {% endfor %}
+
+{% endblock content %}

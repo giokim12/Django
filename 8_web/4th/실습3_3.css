@@ -1,0 +1,46 @@
+.loginfail {
+    background-color: red;
+    color: white;
+    border-width: 0px;
+    display: block;
+    float: in;
+}
+
+.gitlabsys {
+    font-style: bold;
+    clear: both;
+}
+
+.backbox{
+  flex: column;
+  margin: 0px;
+  float: inherit;
+  border: 2px;
+  border-color: lightgray;
+  display: block;
+
+}
+
+.loginbox {
+    flex: column;
+    /* float: ; */
+    position: relative;
+}
+
+.username {
+    display: contents;
+    /* float: ; */
+
+
+}
+
+.password {
+    display: contents;
+
+}
+
+.signinbutton {
+    background-color: green;
+    color: white;
+    border-width: 0px;
+}

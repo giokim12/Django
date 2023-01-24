@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>INDEX PAGE</h1>
+  <button type="button" class="btn btn-primary">{{ name }}</button>
+  <hr>
+  <p>전체출력</p>
+  <p>fruit list: {{ fruits}} </p>
+  <p> hate list: {{ hate}} </p>
+  <hr>
+  <p> just show</p>
+  {% for fruit in fruits %}
+  <p> {{fruit}}</p>
+  {% endfor %}
+  <p>hate not show</p>
+  {% for fruit in fruits %}
+    {% if fruit not in hate %}
+      <p> {{fruit}}</p>
+    {% endif %}
+  {% endfor %}
+    <p>less than 3 words show</p>
+  {% for fruit in fruits %}
+      {% if fruit not in hate %}
+        {% if fruit|length > 1 %}
+          <p>{{fruit|truncatechars:3}}</p>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+{% endblock content %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>오늘은 9월 1일이다</h1>
+</body>
+</html> {% endcomment %}
